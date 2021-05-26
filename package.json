@@ -1,6 +1,6 @@
 {
   "name": "@grean/react-native-metro-config-app-example",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Metro config to allow the example app to import the local lib",
   "main": "index.js",
   "scripts": {
