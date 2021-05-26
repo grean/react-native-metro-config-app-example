@@ -1,20 +1,17 @@
-/**
- * Metro configuration for React Native
- * https://github.com/facebook/react-native
- *
- * @format
- */
 
-const pak = require('../package.json');
-const exclusionList = require('metro-config/src/defaults/exclusionList');
-const escape = require('escape-string-regexp');
+
 const path = require('path');
-
-const root = path.resolve(__dirname, '..');
+const root = path.resolve(process.cwd(), '..');
+// const root = path.resolve(__dirname, '..');
 
 console.log(`root ${root}`);
 console.log(`process.cwd ${process.cwd()}`);
 console.log(`__dirname ${__dirname}`);
+
+const pak = require(path.join(process.cwd(), '../package.json'));
+const exclusionList = require('metro-config/src/defaults/exclusionList');
+const escape = require('escape-string-regexp');
+
 
 // const extraNodeModules = {
 //   [pak.name]: root,
@@ -29,7 +26,7 @@ const watchFolders = [
 ];
 
 module.exports = {
-  projectRoot: __dirname,
+  projectRoot: process.cwd(),
   watchFolders,
   transformer: {
     getTransformOptions: async () => ({
@@ -42,7 +39,7 @@ module.exports = {
   resolver: {
     blacklistRE: exclusionList(peerModules.map((m) => new RegExp(`^${escape(path.join(root, 'node_modules', m))}\\/.*$`))),
     extraNodeModules: peerModules.reduce((acc, name) => {
-      const lol = path.join(__dirname, 'node_modules', name);
+      const lol = path.join(process.cwd(), 'node_modules', name);
       console.log(`name ${lol}`)
       acc[name] = lol
       return acc;
