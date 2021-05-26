@@ -19,7 +19,8 @@
     "release-it": "^14.7.0"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   },
   "private": false
 }
