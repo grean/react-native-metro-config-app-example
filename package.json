@@ -4,9 +4,12 @@
   "description": "Metro config to allow the example app to import the local lib",
   "main": "index.js",
   "scripts": {
-    "release": "release-it"
+    "release": "release-it --npm.skipChecks"
   },
-  "repository": "https://github.com/grean/react-native-metro-config-app-example.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/grean/react-native-metro-config-app-example.git"
+  },
   "author": "Réan Guillaume",
   "license": "MIT",
   "private": false,
