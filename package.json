@@ -12,11 +12,11 @@
   },
   "author": "Réan Guillaume",
   "license": "MIT",
-  "private": false,
   "dependencies": {
     "metro-config": "^0.66.0"
   },
   "devDependencies": {
     "release-it": "^14.7.0"
-  }
+  },
+  "private": false
 }
