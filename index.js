@@ -4,9 +4,9 @@ const path = require('path');
 const root = path.resolve(process.cwd(), '..');
 // const root = path.resolve(__dirname, '..');
 
-console.log(`root ${root}`);
-console.log(`process.cwd ${process.cwd()}`);
-console.log(`__dirname ${__dirname}`);
+// console.log(`root ${root}`);
+// console.log(`process.cwd ${process.cwd()}`);
+// console.log(`__dirname ${__dirname}`);
 
 const pak = require(path.join(process.cwd(), '../package.json'));
 const exclusionList = require('metro-config/src/defaults/exclusionList');
@@ -39,9 +39,10 @@ module.exports = {
   resolver: {
     blacklistRE: exclusionList(peerModules.map((m) => new RegExp(`^${escape(path.join(root, 'node_modules', m))}\\/.*$`))),
     extraNodeModules: peerModules.reduce((acc, name) => {
-      const lol = path.join(process.cwd(), 'node_modules', name);
-      console.log(`name ${lol}`)
-      acc[name] = lol
+      // const lol = path.join(process.cwd(), 'node_modules', name);
+      // console.log(`name ${lol}`)
+      // acc[name] = lol;
+      acc[name] = path.join(process.cwd(), 'node_modules', name);
       return acc;
     }, {}),
     // extraNodeModules: new Proxy(extraNodeModules, {
